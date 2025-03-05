@@ -38,6 +38,17 @@ public class Persona {
         return fecha;
     }
 
+    public void imprimirDatosPersona(String datos) {
+        datos += "Nombre: " + nombre + "\n";
+        datos += "Apellido: " + apellido + "\n";
+        datos += "Fecha de Nacimiento: " + fechaNacimiento + "\n";
+        datos += "Dirección: " + direccion + "\n";
+        datos += "Ciudad de Procedencia: " + ciudadProcedencia + "\n";
+
+        System.out.println(datos);
+    }
+
+
     public void registrarDatos(){
         DNI =JOptionPane.showInputDialog("Ingrese el DNI:");
         nombre =JOptionPane.showInputDialog("Ingrese el nombre:");
@@ -98,15 +109,4 @@ public class Persona {
         this.ciudadProcedencia = ciudadProcedencia;
     }
 
-    @Override
-    public String toString() {
-        return "Persona{" +
-                "DNI='" + DNI + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", fechaNacimiento=" + fechaNacimiento +
-                ", direccion='" + direccion + '\'' +
-                ", ciudadProcedencia='" + ciudadProcedencia + '\'' +
-                '}';
-    }
 }

@@ -37,6 +37,27 @@ public class Paciente extends Persona{
         medicamentos = new ArrayList<>(Arrays.asList(alergias.split(" ")));
     }
 
+    @Override
+    public void imprimirDatosPersona(String datos) {
+        super.imprimirDatosPersona(datos);
+
+        datos += "Número Historia Clínica: " + numHistoriaClinica + "\n";
+        datos += "Sexo: " + sexo + "\n";
+        datos += "Grupo Sanguíneo: " + GrupSangineo + "\n";
+
+        if (medicamentos.size() > 0) {
+            datos += "Lista de Medicamentos a los que es Alérgico\n";
+            for (int i = 0; i < medicamentos.size(); i++) {
+                datos += "\t" + medicamentos.get(i) + "\n";
+            }
+        } else {
+            datos += "El paciente no es alérgico a ningún medicamento";
+        }
+
+        System.out.println(datos);
+    }
+
+
     public int getNumHistoriaClinica() {
         return numHistoriaClinica;
     }
